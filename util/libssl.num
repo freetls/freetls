@@ -514,3 +514,14 @@ SSL_CTX_load_verify_store               ?	3_0_0	EXIST::FUNCTION:
 SSL_CTX_set_tlsext_ticket_key_evp_cb    ?	3_0_0	EXIST::FUNCTION:
 SSL_CTX_new_with_libctx                 ?	3_0_0	EXIST::FUNCTION:
 SSL_new_session_ticket                  ?	3_0_0	EXIST::FUNCTION:
+SSL_set_quic_transport_params           ?	3_0_0	EXIST::FUNCTION:QUIC
+SSL_get_peer_quic_transport_params      ?	3_0_0	EXIST::FUNCTION:QUIC
+SSL_quic_max_handshake_flight_len       ?	3_0_0	EXIST::FUNCTION:QUIC
+SSL_quic_read_level                     ?	3_0_0	EXIST::FUNCTION:QUIC
+SSL_quic_write_level                    ?	3_0_0	EXIST::FUNCTION:QUIC
+SSL_provide_quic_data                   ?	3_0_0	EXIST::FUNCTION:QUIC
+SSL_CTX_set_quic_method                 ?	3_0_0	EXIST::FUNCTION:QUIC
+SSL_set_quic_method                     ?	3_0_0	EXIST::FUNCTION:QUIC
+SSL_process_quic_post_handshake         ?	3_0_0	EXIST::FUNCTION:QUIC
+SSL_CIPHER_get_prf_nid                  ?	3_0_0	EXIST::FUNCTION:
+SSL_is_quic                             ?	3_0_0	EXIST::FUNCTION:QUIC

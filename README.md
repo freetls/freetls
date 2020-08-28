@@ -1,21 +1,17 @@
-Welcome to the OpenSSL Project
+Welcome to the FreeTLS Project
 ==============================
-
-[![openssl logo][]][www.openssl.org]
 
 [![travis badge][]][travis jobs]
 [![appveyor badge][]][appveyor jobs]
 
-OpenSSL is a robust, commercial-grade, full-featured Open Source Toolkit
+FreeTLS is a robust, commercial-grade, full-featured Open Source Toolkit
 for the Transport Layer Security (TLS) protocol formerly known as the
 Secure Sockets Layer (SSL) protocol. The protocol implementation is based
 on a full-strength general purpose cryptographic library, which can also
 be used stand-alone.
 
-OpenSSL is descended from the SSLeay library developed by Eric A. Young
+FreeTLS is descended from the SSLeay library developed by Eric A. Young
 and Tim J. Hudson.
-
-The official Home Page of the OpenSSL Project is [www.openssl.org][].
 
 Table of Contents
 =================
@@ -32,7 +28,7 @@ Table of Contents
 Overview
 ========
 
-The OpenSSL toolkit includes:
+The FreeTLS toolkit includes:
 
 - **libssl**
   an implementation of all TLS protocol versions up to TLSv1.3 ([RFC 8446][]).
@@ -42,7 +38,7 @@ The OpenSSL toolkit includes:
   basis of the TLS implementation, but can also be used independently.
 
 - **openssl**
-  the OpenSSL command line tool, a swiss army knife for cryptographic tasks,
+  the FreeTLS command line tool, a swiss army knife for cryptographic tasks,
   testing and analyzing. It can be used for
   - creation of key parameters
   - creation of X.509 certificates, CSRs and CRLs
@@ -58,12 +54,8 @@ Download
 For Production Use
 ------------------
 
-Source code tarballs of the official releases can be downloaded from
-[www.openssl.org/source](https://www.openssl.org/source).
-The OpenSSL project does not distribute the toolkit in binary form.
-
 However, for a large variety of operating systems precompiled versions
-of the OpenSSL toolkit are available. In particular on Linux and other
+of the FreeTLS toolkit are available. In particular on Linux and other
 Unix operating systems it is normally recommended to link against the
 precompiled shared libraries provided by the distributor or vendor.
 
@@ -74,28 +66,6 @@ Although testing and development could in theory also be done using
 the source tarballs, having a local copy of the git repository with
 the entire project history gives you much more insight into the
 code base.
-
-The official OpenSSL Git Repository is located at [git.openssl.org][].
-There is a GitHub mirror of the repository at [github.com/openssl/openssl][],
-which is updated automatically from the former on every commit.
-
-A local copy of the Git Repository can be obtained by cloning it from
-the original OpenSSL repository using
-
-    git clone git://git.openssl.org/openssl.git
-
-or from the GitHub mirror using
-
-    git clone https://github.com/openssl/openssl.git
-
-If you intend to contribute to OpenSSL, either to fix bugs or contribute
-new features, you need to fork the OpenSSL repository openssl/openssl on
-GitHub and clone your public fork instead.
-
-    git clone https://github.com/yourname/openssl.git
-
-This is necessary, because all development of OpenSSL nowadays is done via
-GitHub pull requests. For more details, see [Contributing](#contributing).
 
 Build and Install
 =================
@@ -113,32 +83,13 @@ document.
  * [NOTES-Perl.m](NOTES-Perl.md)
  * [NOTES-Valgrind.md](NOTES-Valgrind.md)
 
-Specific notes on upgrading to OpenSSL 3.0 from previous versions, as well as
-known issues are available on the OpenSSL
-[wiki](https://wiki.openssl.org/index.php/OpenSSL_3.0).
-
 Documentation
 =============
-
-Manual Pages
-------------
-
-The manual pages for the master branch and all current stable releases are
-available online.
-
-- [OpenSSL master](https://www.openssl.org/docs/manmaster)
-- [OpenSSL 1.1.1](https://www.openssl.org/docs/man1.1.1)
-
-Wiki
-----
-
-There is a Wiki at [wiki.openssl.org][] which is currently not very active.
-It contains a lot of useful information, not all of which is up to date.
 
 License
 =======
 
-OpenSSL is licensed under the Apache License 2.0, which means that
+FreeTLS is licensed under the Apache License 2.0, which means that
 you are free to get and use it for commercial and non-commercial
 purposes as long as you fulfill its conditions.
 
@@ -174,47 +125,23 @@ All rights reserved.
 
 <!-- Links  -->
 
-[www.openssl.org]:
-    <https://www.openssl.org>
-    "OpenSSL Homepage"
-
-[git.openssl.org]:
-    <https://git.openssl.org>
-    "OpenSSL Git Repository"
-
-[git.openssl.org]:
-    <https://git.openssl.org>
-    "OpenSSL Git Repository"
-
-[github.com/openssl/openssl]:
-    <https://github.com/openssl/openssl>
-    "OpenSSL GitHub Mirror"
-
-[wiki.openssl.org]:
-    <https://wiki.openssl.org>
-    "OpenSSL Wiki"
-
 [RFC 8446]:
      <https://tools.ietf.org/html/rfc8446>
 
 <!-- Logos and Badges -->
 
-[openssl logo]:
-    doc/images/openssl.svg
-    "OpenSSL Logo"
-
 [travis badge]:
-    <https://travis-ci.org/openssl/openssl.svg?branch=master>
+    <https://travis-ci.org/freetls/freetls.svg?branch=master>
     "Travis Build Status"
 
 [travis jobs]:
-    <https://travis-ci.org/openssl/openssl>
+    <https://travis-ci.org/freetls/freetls>
     "Travis Jobs"
 
 [appveyor badge]:
-    <https://ci.appveyor.com/api/projects/status/8e10o7xfrg73v98f/branch/master?svg=true>
+    <https://ci.appveyor.com/api/projects/status/xqpfgwfp5q2j3lvu/branch/master?svg=true>
     "AppVeyor Build Status"
 
 [appveyor jobs]:
-    <https://ci.appveyor.com/project/openssl/openssl/branch/master>
+    <https://ci.appveyor.com/project/ericcurtin/freetls/branch/master>
     "AppVeyor Jobs"

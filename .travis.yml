@@ -89,42 +89,11 @@ jobs:
           compiler: gcc
           env:  EXTENDED_TEST="yes" CONFIG_OPTS="--debug --coverage no-asm enable-rc5 enable-md2 enable-ec_nistp_64_gcc_128 enable-ssl3 enable-ssl3-method enable-nextprotoneg enable-weak-ssl-ciphers no-shared enable-buildtest-c++ -DPEDANTIC -DFUZZING_BUILD_MODE_UNSAFE_FOR_PRODUCTION" COVERALLS="yes" BORINGSSL_TESTS="yes" CXX="g++"
         - os: linux
-          addons:
-              apt:
-                  packages:
-                      - golang-1.10
-                      - cmake
-                      - libtest2-suite-perl
-          compiler: gcc
-          # External test pyca-cryptography temporarily disabled due to long term travis failures
-          env:  EXTENDED_TEST="yes" CONFIG_OPTS="--debug enable-ssl3 enable-ssl3-method enable-weak-ssl-ciphers enable-external-tests enable-buildtest-c++" BORINGSSL_TESTS="yes" CXX="g++" TESTS="test_external_boringssl test_external_krb5 test_external_gost_engine"
-        - os: linux
           compiler: clang
           env: EXTENDED_TEST="yes" CONFIG_OPTS="enable-msan disable-afalgeng -Wno-unused-command-line-argument"
         - os: linux
           compiler: clang
           env:  EXTENDED_TEST="yes" CONFIG_OPTS="no-asm enable-ubsan enable-rc5 enable-md2 enable-ssl3 enable-ssl3-method enable-nextprotoneg no-shared enable-buildtest-c++ -DFUZZING_BUILD_MODE_UNSAFE_FOR_PRODUCTION -Wno-unused-command-line-argument" CXX="clang++"
-        - os: linux
-          compiler: gcc
-          env: EXTENDED_TEST="yes" CONFIG_OPTS="--debug no-asm enable-asan enable-ubsan enable-rc5 enable-md2 enable-ec_nistp_64_gcc_128 enable-buildtest-c++" OPENSSL_TEST_RAND_ORDER=0
-        - os: linux
-          dist: xenial
-          addons:
-              apt:
-                  packages:
-                      - binutils-mingw-w64
-                      - gcc-mingw-w64
-          compiler: i686-w64-mingw32-gcc
-          env: EXTENDED_TEST="yes" CONFIG_OPTS="no-pic"
-        - os: linux
-          dist: xenial
-          addons:
-              apt:
-                  packages:
-                      - binutils-mingw-w64
-                      - gcc-mingw-w64
-          compiler: x86_64-w64-mingw32-gcc
-          env: EXTENDED_TEST="yes" CONFIG_OPTS="no-pic"
         - os: linux
           language: python
           python: 3.7

@@ -1526,9 +1526,8 @@ int EVP_PKEY_CTX_set_signature_md(EVP_PKEY_CTX *ctx, const EVP_MD *md);
 # define EVP_PKEY_OP_TYPE_FROMDATA \
         (EVP_PKEY_OP_PARAMFROMDATA | EVP_PKEY_OP_KEYFROMDATA)
 
-# define  EVP_PKEY_CTX_set_mac_key(ctx, key, len)        \
-                EVP_PKEY_CTX_ctrl(ctx, -1, EVP_PKEY_OP_KEYGEN,  \
-                                  EVP_PKEY_CTRL_SET_MAC_KEY, len, (void *)(key))
+int EVP_PKEY_CTX_set_mac_key(EVP_PKEY_CTX *ctx, const unsigned char *key,
+                             int keylen);
 
 # define EVP_PKEY_CTRL_MD                1
 # define EVP_PKEY_CTRL_PEER_KEY          2
@@ -1636,6 +1635,11 @@ int EVP_PKEY_get_raw_private_key(const EVP_PKEY *pkey, unsigned char *priv,
 int EVP_PKEY_get_raw_public_key(const EVP_PKEY *pkey, unsigned char *pub,
                                 size_t *len);
 
+EVP_PKEY *EVP_PKEY_new_CMAC_key_with_libctx(const unsigned char *priv,
+                                            size_t len,
+                                            const char *cipher_name,
+                                            OPENSSL_CTX *libctx,
+                                            const char *propq);
 EVP_PKEY *EVP_PKEY_new_CMAC_key(ENGINE *e, const unsigned char *priv,
                                 size_t len, const EVP_CIPHER *cipher);
 

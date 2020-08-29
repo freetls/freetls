@@ -36,3 +36,6 @@ SOURCE[../../libfips.a]=rsa_kmgmt.c
 SOURCE[../../libnonfips.a]=rsa_kmgmt.c
 
 SOURCE[$KDF_GOAL]=kdf_legacy_kmgmt.c
+
+SOURCE[../../libfips.a]=mac_legacy_kmgmt.c
+SOURCE[../../libnonfips.a]=mac_legacy_kmgmt.c

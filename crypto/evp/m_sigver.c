@@ -172,9 +172,6 @@ static int do_sigver_init(EVP_MD_CTX *ctx, EVP_PKEY_CTX **pctx,
                                                        locmdname,
                                                        sizeof(locmdname)) > 0) {
                 mdname = canon_mdname(locmdname);
-            } else {
-                EVPerr(EVP_F_DO_SIGVER_INIT, EVP_R_NO_DEFAULT_DIGEST);
-                return 0;
             }
         }
 
@@ -186,7 +183,7 @@ static int do_sigver_init(EVP_MD_CTX *ctx, EVP_PKEY_CTX **pctx,
              * so the EVP_MD should not be used beyound the lifetime of the
              * EVP_MD_CTX.
              */
-            ctx->reqdigest = ctx->fetched_digest =
+            ctx->digest = ctx->reqdigest = ctx->fetched_digest =
                 EVP_MD_fetch(locpctx->libctx, mdname, props);
         }
     }

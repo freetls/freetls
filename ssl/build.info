@@ -30,4 +30,8 @@ SOURCE[../libssl]=\
         statem/statem.c record/ssl3_record_tls13.c record/tls_pad.c
 DEFINE[../libssl]=$AESDEF
 
+IF[{- !$disabled{quic} -}]
+  SOURCE[../libssl]=ssl_quic.c statem/statem_quic.c
+ENDIF
+
 SOURCE[../providers/libcommon.a]=record/tls_pad.c

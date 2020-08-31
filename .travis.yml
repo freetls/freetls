@@ -129,16 +129,6 @@ matrix:
           addons:
               apt:
                   packages:
-                      - gcc-5
-                      - g++-5
-                  sources:
-                      - ubuntu-toolchain-r-test
-          compiler: gcc-5
-          env: UBUNTU_GCC_HACK="yes" EXTENDED_TEST="yes" CONFIG_OPTS="--debug no-asm enable-asan enable-ubsan enable-rc5 enable-md2 enable-ec_nistp_64_gcc_128" OPENSSL_TEST_RAND_ORDER=0
-        - os: linux
-          addons:
-              apt:
-                  packages:
                       - binutils-mingw-w64
                       - gcc-mingw-w64
           compiler: i686-w64-mingw32-gcc
@@ -234,12 +224,6 @@ script:
     - top=${PWD}
     - if [ -n "$DESTDIR" ]; then
           cd _build;
-      fi
-    - if $make update; then
-          echo -e '+\057 MAKE UPDATE OK';
-      else
-          echo -e '+\057 MAKE UPDATE FAILED';
-          travis_terminate 1;
       fi
     - git diff --exit-code
     - if [ -n "$CHECKDOCS" ]; then
